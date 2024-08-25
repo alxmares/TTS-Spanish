@@ -1,30 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XTTS Voice Cloning</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
             text-align: center;
-            margin-top: 50px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+            color: #555;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
         }
         input[type="text"], button {
-            font-size: 16px;
+            font-size: 1em;
             padding: 10px;
             margin: 10px;
+            width: calc(100% - 40px);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
         audio {
             margin-top: 20px;
+            width: 100%;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <h1>Genera Voz a partir de Texto</h1>
-    <input type="text" id="inputText" placeholder="Escribe tu texto aquí" size="50">
-    <button onclick="generateVoice()">Generar Voz</button>
-    <audio id="audioOutput" controls></audio>
+    <div class="container">
+        <h1>XTTS Voice Cloning</h1>
+        <p>Experience a natural and non-robotic TTS in Spanish, built using Mozilla's Common Voice dataset.</p>
+        
+        <h2>Original Voice</h2>
+        <audio controls>
+            <source src="https://alexmares-TTS-Mozilla.hf.space/file/your-reference-voice-file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h2>Generate Your Own Voice</h2>
+        <input type="text" id="inputText" placeholder="Enter your text here">
+        <button onclick="generateVoice()">Generate Voice</button>
+        <audio id="audioOutput" controls></audio>
+    </div>
+
+    <footer>
+        <p>Developed by Francisco Alex Mares Solano. Powered by Hugging Face Spaces.</p>
+    </footer>
 
     <script>
         async function generateVoice() {
