@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Project</title>
+    <!-- Importar fuente Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4mxK.woff2') format('woff2');
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0073e6;
+        }
+
+        h2 {
+            color: #0073e6;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        .audio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .audio-table th, .audio-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .audio-table th {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        .audio-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .description, .upcoming {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .badges {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .badges img {
+            margin: 0 10px;
+        }
+
+        .realtime input {
+            width: 70%;
+            padding: 15px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 30px;
+            border: 2px solid #ddd;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .realtime button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: #0073e6;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .realtime button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+
+        .realtime button:hover:not(:disabled) {
+            background-color: #005bb5;
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Spanish Natural Text to Speech</h1>
+
+        <div class="description">
+            <p>Este proyecto tiene como objetivo desarrollar un modelo de Text to Speech más realista y natural utilizando el modelo XTTS y la base de datos Common Voice Mozilla 2024.</p>
+        </div>
+
+        <h2>Muestras de las Voces Originales</h2>
+        <h3>Voz Original 1</h3>
+        <audio controls>
+            <source src="wavs/user1_reference.wav" type="audio/wav">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <h3>Voz Original 2</h3>
+        <audio controls>
+            <source src="wavs/user2_reference.wav" type="audio/wav">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <h2>Resultados del Modelo</h2>
+        <table class="audio-table">
+            <tr>
+                <th>Texto</th>
+                <th>Voz 1</th>
+                <th>Voz 2</th>
+            </tr>
+            <!-- Ejemplo 1 -->
+            <tr>
+                <td>Texto de ejemplo 1</td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz1_ejemplo1.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz2_ejemplo1.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+            </tr>
+            <!-- Ejemplo 2 -->
+            <tr>
+                <td>Texto de ejemplo 2</td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz1_ejemplo2.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz2_ejemplo2.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+            </tr>
+            <!-- Ejemplo 3 -->
+            <tr>
+                <td>Texto de ejemplo 3</td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz1_ejemplo3.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz2_ejemplo3.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+            </tr>
+            <!-- Ejemplo 4 -->
+            <tr>
+                <td>Texto de ejemplo 4</td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz1_ejemplo4.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz2_ejemplo4.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+            </tr>
+            <!-- Ejemplo 5 -->
+            <tr>
+                <td>Texto de ejemplo 5</td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz1_ejemplo5.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="ruta_a_audio_voz2_ejemplo5.wav" type="audio/wav">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </td>
+            </tr>
+        </table>
+
+        <div class="upcoming">
+            <h2>Genera tu voz!</h2>
+            <p>Estamos trabajando para ofrecer un servicio de Text to Speech en tiempo real. ¡Mantente atento!</p>
+        </div>
+
+        <div class="realtime">
+            <h2>Text to Speech en Tiempo Real</h2>
+            <div class="overlay">
+                <input type="text" placeholder="Escribe tu texto aquí..." disabled>
+                <button disabled>Convertir a Voz</button>
+                <div class="overlay-text">Proximamente...</div>
+            </div>
+        </div>
+
+        <div class="badges">
+            <h2>Herramientas Utilizadas</h2>
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+            <img src="https://img.shields.io/badge/XTTS-black?style=for-the-badge" alt="XTTS">
+            <img src="https://img.shields.io/badge/Common%20Voice%20Mozilla-ff7139?style=for-the-badge&logo=mozilla&logoColor=white" alt="Common Voice Mozilla">
+        </div>
+    </div>
+
+</body>
+</html>
+
