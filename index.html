@@ -66,6 +66,17 @@
             background-color: #f2f2f2;
         }
 
+        .audio-table td {
+            font-size: 14px; /* Reducir tamaño de fuente */
+            vertical-align: middle; /* Centrar verticalmente */
+        }
+
+        .audio-table td audio {
+            width: 230px; /* Establecer ancho fijo para los controles de audio en la tabla */
+            margin: 5px auto; /* Margen alrededor de los controles y centrado */
+            display: block; /* Asegurar que se muestre como bloque para el centrado */
+        }
+
         .description, .upcoming {
             margin: 20px 0;
             text-align: center;
@@ -111,9 +122,30 @@
             background-color: #005bb5;
         }
 
-        audio {
-            width: 100%;
+        audio:not(.audio-table td audio) {
+            width: 100%; /* Establecer ancho completo para los controles de audio fuera de la tabla */
+            margin: 10px 10; /* Margen superior e inferior para separar los audios */
         }
+
+        .overlay {
+            position: relative;
+            display: inline-block;
+        }
+
+        .overlay .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
@@ -158,80 +190,80 @@
             </tr>
             <!-- Ejemplo 1 -->
             <tr>
-                <td>Texto de ejemplo 1</td>
+                <td>La teoría de la relatividad de Einstein revolucionó nuestra comprensión del espacio y el tiempo.</td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz1_ejemplo1.wav" type="audio/wav">
+                        <source src="wavs/user1_01.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz2_ejemplo1.wav" type="audio/wav">
+                        <source src="wavs/user2_01.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
             </tr>
             <!-- Ejemplo 2 -->
             <tr>
-                <td>Texto de ejemplo 2</td>
+                <td>El uso del color y la luz en las pinturas de Van Gogh refleja su estado emocional complejo.</td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz1_ejemplo2.wav" type="audio/wav">
+                        <source src="wavs/user1_02.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz2_ejemplo2.wav" type="audio/wav">
+                        <source src="wavs/user2_02.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
             </tr>
             <!-- Ejemplo 3 -->
             <tr>
-                <td>Texto de ejemplo 3</td>
+                <td>El sol brilla intensamente hoy.</td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz1_ejemplo3.wav" type="audio/wav">
+                        <source src="wavs/user1_03.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz2_ejemplo3.wav" type="audio/wav">
+                        <source src="wavs/user2_03.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
             </tr>
             <!-- Ejemplo 4 -->
             <tr>
-                <td>Texto de ejemplo 4</td>
+                <td>Un perro en el parque hoy intentó atrapar su propia cola y acabó mareado.</td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz1_ejemplo4.wav" type="audio/wav">
+                        <source src="wavs/user1_04.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz2_ejemplo4.wav" type="audio/wav">
+                        <source src="wavs/user2_04.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
             </tr>
             <!-- Ejemplo 5 -->
             <tr>
-                <td>Texto de ejemplo 5</td>
+                <td>La Gran Muralla China se construyó hace siglos.</td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz1_ejemplo5.wav" type="audio/wav">
+                        <source src="wavs/user1_05.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
                 <td>
                     <audio controls>
-                        <source src="ruta_a_audio_voz2_ejemplo5.wav" type="audio/wav">
+                        <source src="wavs/user2_05.wav" type="audio/wav">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </td>
