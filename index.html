@@ -33,35 +33,21 @@
             width: 90%;
         }
 
-        h1 {
+        h1, h2, h3 {
             text-align: center;
             color: #0073e6;
         }
 
-        h2 {
-            color: #0073e6;
-            text-align: center;
-        }
-
-        h3 {
-            color: #555;
-            text-align: center;
+        .audio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
         .audio-table td, .audio-table th {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
-            width: 20%; /* Reducir el ancho del texto */
-        }
-
-        .audio-table td:first-child {
-            width: 40%; /* Incrementar el ancho de la primera columna de texto */
-        }
-
-        .audio-table td audio {
-            width: 100%; /* Asegurar que los controles de audio ocupen todo el ancho disponible */
-            max-width: none; /* Eliminar la restricción de ancho máximo */
         }
 
         .audio-table th {
@@ -73,15 +59,15 @@
             background-color: #f2f2f2;
         }
 
-        .audio-table td {
-            font-size: 14px;
-            vertical-align: middle;
+        .audio-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
         }
 
-        .audio-table td audio {
-            width: 100%;
-            margin: 5px auto;
-            display: block;
+        .audio-button img {
+            width: 30px;
+            height: 30px;
         }
 
         .description, .upcoming {
@@ -166,11 +152,23 @@
             text-decoration: none;
             color: #0073e6;
             font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #0073e6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #0073e6;
+            color: white;
         }
 
         .social-links img {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             margin-right: 8px;
         }
 
@@ -257,80 +255,80 @@
             <tr>
                 <td>La teoría de la relatividad de Einstein revolucionó nuestra comprensión del espacio y el tiempo.</td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user1_01.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user1_01.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user2_01.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user2_01.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
             </tr>
             <!-- Ejemplo 2 -->
             <tr>
                 <td>El uso del color y la luz en las pinturas de Van Gogh refleja su estado emocional complejo.</td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user1_02.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user1_02.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user2_02.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user2_02.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
             </tr>
             <!-- Ejemplo 3 -->
             <tr>
                 <td>El sol brilla intensamente hoy.</td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user1_03.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user1_03.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user2_03.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user2_03.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
             </tr>
             <!-- Ejemplo 4 -->
             <tr>
                 <td>Un perro en el parque hoy intentó atrapar su propia cola y acabó mareado.</td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user1_04.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user1_04.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user2_04.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user2_04.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
             </tr>
             <!-- Ejemplo 5 -->
             <tr>
                 <td>La Gran Muralla China se construyó hace siglos.</td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user1_05.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user1_05.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
                 <td>
-                    <audio controls>
-                        <source src="wavs/user2_05.wav" type="audio/wav">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
+                    <!-- Botón de reproducción personalizado -->
+                    <button class="audio-button" onclick="togglePlay(this, 'wavs/user2_05.wav')">
+                        <img src="https://img.icons8.com/ios-glyphs/30/0073e6/play.png" alt="Play">
+                    </button>
                 </td>
             </tr>
         </table>
@@ -355,18 +353,37 @@
 
         <div class="social-links">
             <a href="https://github.com/alxmares" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/0073e6/github.png" alt="GitHub">GitHub
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">GitHub
             </a>
             <a href="https://www.linkedin.com/in/alxmrs/" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/0073e6/linkedin.png" alt="LinkedIn">LinkedIn
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">LinkedIn
             </a>
-        </div>
-
-        <div class="explore-projects">
-            <h2>🚀 Explore More Projects!</h2>
-            <a href="https://alxmares.github.io" target="_blank">📚 Check out all my projects on GitHub Pages</a>
+            <a href="https://alxmares.github.io" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="GitHub Pages">All Projects
+            </a>
         </div>
     </div>
 
+    <script>
+        function togglePlay(button, audioSrc) {
+            let audio = button.audio;
+            if (!audio) {
+                audio = new Audio(audioSrc);
+                button.audio = audio;
+
+                audio.onended = () => {
+                    button.querySelector('img').src = 'https://img.icons8.com/ios-glyphs/30/0073e6/play.png';
+                };
+            }
+
+            if (audio.paused) {
+                audio.play();
+                button.querySelector('img').src = 'https://img.icons8.com/ios-glyphs/30/0073e6/pause.png';
+            } else {
+                audio.pause();
+                button.querySelector('img').src = 'https://img.icons8.com/ios-glyphs/30/0073e6/play.png';
+            }
+        }
+    </script>
 </body>
 </html>
