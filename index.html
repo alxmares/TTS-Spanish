@@ -30,6 +30,7 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
         }
 
         h1 {
@@ -39,22 +40,28 @@
 
         h2 {
             color: #0073e6;
+            text-align: center;
         }
 
         h3 {
             color: #555;
+            text-align: center;
         }
 
-        .audio-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .audio-table th, .audio-table td {
+        .audio-table td, .audio-table th {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
+            width: 20%; /* Reducir el ancho del texto */
+        }
+
+        .audio-table td:first-child {
+            width: 40%; /* Incrementar el ancho de la primera columna de texto */
+        }
+
+        .audio-table td audio {
+            width: 100%; /* Asegurar que los controles de audio ocupen todo el ancho disponible */
+            max-width: none; /* Eliminar la restricción de ancho máximo */
         }
 
         .audio-table th {
@@ -67,14 +74,14 @@
         }
 
         .audio-table td {
-            font-size: 14px; /* Reducir tamaño de fuente */
-            vertical-align: middle; /* Centrar verticalmente */
+            font-size: 14px;
+            vertical-align: middle;
         }
 
         .audio-table td audio {
-            width: 230px; /* Establecer ancho fijo para los controles de audio en la tabla */
-            margin: 5px auto; /* Margen alrededor de los controles y centrado */
-            display: block; /* Asegurar que se muestre como bloque para el centrado */
+            width: 100%;
+            margin: 5px auto;
+            display: block;
         }
 
         .description, .upcoming {
@@ -93,6 +100,7 @@
 
         .realtime input {
             width: 70%;
+            max-width: 90%;
             padding: 15px;
             font-size: 16px;
             margin-top: 10px;
@@ -123,8 +131,8 @@
         }
 
         audio:not(.audio-table td audio) {
-            width: 100%; /* Establecer ancho completo para los controles de audio fuera de la tabla */
-            margin: 10px 10; /* Margen superior e inferior para separar los audios */
+            width: 100%;
+            margin: 10px 0;
         }
 
         .overlay {
@@ -146,17 +154,74 @@
             text-align: center;
         }
 
+        .social-links {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
         .social-links a {
-            margin: 0 10px;
             text-decoration: none;
             color: #0073e6;
             font-size: 20px;
         }
 
-        .social-links a:hover {
-            text-decoration: underline;
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
         }
-        
+
+        .explore-projects {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .explore-projects a {
+            text-decoration: none;
+            color: #0073e6;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .audio-table td, .audio-table th {
+                font-size: 12px;
+            }
+
+            .realtime input, .realtime button {
+                width: 80%;
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .social-links img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .audio-table td, .audio-table th {
+                font-size: 11px;
+                padding: 6px;
+            }
+
+            .realtime input, .realtime button {
+                width: 90%;
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -275,10 +340,10 @@
         </div>
 
         <div class="realtime">
-            <h3>Text to Speech en Tiempo Real</h2>
-                <input type="text" placeholder="Escribe tu texto aquí..." disabled>
-                <button disabled>Convertir a Voz</button>
-                <div class="overlay-text">Proximamente...</div>
+            <h3>Text to Speech en Tiempo Real</h3>
+            <input type="text" placeholder="Escribe tu texto aquí..." disabled>
+            <button disabled>Convertir a Voz</button>
+            <div class="overlay-text">Proximamente...</div>
         </div>
 
         <div class="badges">
@@ -289,11 +354,19 @@
         </div>
 
         <div class="social-links">
-            <a href="https://github.com/alxmares" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/alxmrs/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/alxmares" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/0073e6/github.png" alt="GitHub">GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/alxmrs/" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/0073e6/linkedin.png" alt="LinkedIn">LinkedIn
+            </a>
+        </div>
+
+        <div class="explore-projects">
+            <h2>🚀 Explore More Projects!</h2>
+            <a href="https://alxmares.github.io" target="_blank">📚 Check out all my projects on GitHub Pages</a>
         </div>
     </div>
 
 </body>
 </html>
-
